@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div  class="container">
+	<div class="col-md-12" style="">
+    <p th:text="'Hello, ' + ${name} + '!'" />
+    
+    
+    <table>
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th> Diabetes </th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${diabetes.empty}">
+            <td colspan="2"> No Diabetes Available </td>
+        </tr>
+        <tr th:each="type : ${diabetes}">
+            <td><span th:text="${type.id}"> Id </span></td>
+            <td><span th:text="${type.name}"> Name </span></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+</body>
+</html>
